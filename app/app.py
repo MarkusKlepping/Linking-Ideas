@@ -4,6 +4,7 @@ from app.extensions.database import db, migrate
 
 
 
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object("app.config")
