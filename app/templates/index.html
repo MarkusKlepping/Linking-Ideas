@@ -4,8 +4,109 @@
 
 {%block body%}
 
-  <h1>Hello World!</h1>
-  <p>Welcome to my cookie shop!</p>
-  <a href="/legal">Download legal details</a>
+
+<!DOCTYPE html>
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" crossorigin="anonymous"></script>
+    
+   
+    {% endblock %}
+
+
+</head>
+
+
+
+<body>
+
+    <script>
+        function toggleMenu() {
+
+            document.querySelector(".MenuBox").classList.toggle("MenuBox--open")
+        }
+    </script>
+
+
+    <div class ="MenuBox" >
+            
+        <div style="display: flex; align-items: center; justify-content: center; height: 5rem; width: 100%">
+                <span style="background: white; position: relative; z-index: 99">Menu</span>
+            </div>
+
+            <a>Projects</a>
+            <a>Log In</a>
+            <a>About Us</a>
+            
+            
+
+    </div>
+
+
+
+
+    <div class="WebsiteHeadline">
+        <button class="menu" style="position: relative;" onclick="toggleMenu()">
+            <i class="fas fa-bars" style="font-size: 2rem; color: black!important"></i>
+        </button>
+        <h1>Linking Ideas</h1>
+
+        <!--- invisible button to center h1, after aligning menu-button-->
+        <div style="width: 4rem; margin-right: 3rem"></div>
+    </div>
+
+
+
+
+
+        
+
+
+    <div class="row">
+        <div class="column">
+
+
+            <div style="position: relative;">
+                <img src="static/Pictures/Mountain.jpg">
+
+
+                <span style="position: absolute; top: 4rem; right: 3rem;">ExPlore</span>
+
+            </div>
+
+            <div style="position: relative">
+                <img src="static/Pictures/Interior.jpg">
+                <span style="position: absolute; top: 4rem; right: 3rem">Your Arch</span>
+
+            </div>
+
+            <div style="position: relative">
+                <img src="static/Pictures/Italy.jpg">
+
+                <span style="position: absolute; top: 4rem; right: 3rem">Fernweh</span>
+            </div>
+
+
+
+        </div>
+        
+        <div class="column">
+
+            <div style="position: relative">
+
+                <img src="static/Pictures/Plant.webp">
+                <span style="position: absolute; top: 50%; left: 29%">Plantae</span>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+  <!-- <a href="/legal">Download legal details</a> -->
 
 {%endblock%}
