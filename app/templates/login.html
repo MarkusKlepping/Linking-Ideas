@@ -1,0 +1,66 @@
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" crossorigin="anonymous"></script>
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class="WebsiteHeadline">
+
+    <h1>Log In</h1>
+
+</div>
+
+
+
+<!-- <script>
+    function toggleMenu() {
+
+        document.querySelector(".MenuBox").classList.toggle("MenuBox--open")
+    }
+</script> -->
+
+
+
+
+
+
+
+<div class = "Container" > 
+
+    <div class="namediv">
+
+            <p class = name_to_input></p>
+            <input type="text" name="name" id="first_name" placeholder="Username" >
+
+    </div>
+
+    <hr>
+        <p></p>
+
+    <div class ="namediv">
+
+            <p class = name_to_input></p>
+            <input class ="input" type="text" name="name" id="last_name" placeholder="Password">
+
+    </div> 
+    <hr>
+        <p></p>
+
+
+    
+    <div>
+        <button type="button">Log In!</button> 
+    </div>
+
+        <p></p>
+        
+        <hr id ="login_line">
+</div>
+
+{% endblock %}

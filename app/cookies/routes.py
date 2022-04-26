@@ -28,11 +28,11 @@ def cookies():
   page_number = request.args.get('page', 1, type=int)
   print('=> Page number:', page_number)
   cookies_pagination = Cookie.query.paginate(page_number, current_app.config['COOKIES_PER_PAGE'])
-  return render_template('cookies/index.html', cookies_pagination=cookies_pagination)
+  return render_template('login.html', cookies_pagination=cookies_pagination)
 
 @blueprint.route('/')
 def index():
-  return render_template('/index.html')
+  return render_template('index.html')
 
 @blueprint.route("/about")
 def about():

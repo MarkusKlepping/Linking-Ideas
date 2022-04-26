@@ -1,157 +1,157 @@
-p{
+html, body {
+  margin: 0
+}
+
+.WebsiteHeadline {
+
+  color: black;
+  text-align: center;
+  font-family: "Futura";
+  letter-spacing: 25px;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  
+  height: 5rem;
+
+}
+.WebsiteHeadline button {
+  justify-self: flex-end;
+  
+}
+.WebsiteHeadline h1 {
+  margin: auto;
+  font-weight: normal;
+  font-size:3rem;
+  justify-self: center;
+}
+
+.column img:hover{
+  width: 100.2%;
+  height: 100.2%;
+  
+}
+.column span{
 
   color:#FFB4B4;
   text-align: center;
   font-family: "Futura";
   letter-spacing: 25px;
   font-size:50px;
-  position: absolute;
+ 
+
+
+
+}
+
+.column {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  justify-content:space-between;
+  margin-top: 1rem;
+
+  margin: none;
+ 
+}
+
+.row {
+  width: 100vw;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
   
 }
 
 
 
-#WebsiteHeadline {
+.column div {
+  width: 100%
+}
+.column img {
 
-  color: black;
+  width: 100%
+  
+}
+@media only screen and (max-width: 1000px) {
+.row {
+  flex-direction: column
+}
+.column {
+  width: 100%;
+}
+
+
+
+}
+.menu {
+  border: none;
+  background:none;
+  width: 4rem;
+  height: 4rem;
+  margin-left: 3rem;
+
+  z-index: 10;
+
+  transition-duration: 0.1s;
+}
+.menu:active {
+  transform: scale(0.9);
+}
+
+.MenuBox span {
+  font-size : 2rem;
+  font-family: "Futura";
+  letter-spacing: 1rem;
+}
+.MenuBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed; 
+  height: 100vh; 
+  width: 20vw; 
+  background-color: white;
+  box-shadow: 0 0 2rem 0 rgba(0,0,0,0.3); 
+  z-index: 2;
+
+  transition-duration: 0.3s;
+
+  transform:translateX(-100%);
+}
+.MenuBox--open {
+  transform: translateX(0);
+}
+
+.MenuBox a{
+  
   text-align: center;
   font-family: "Futura";
-  letter-spacing: 25px;
-  font-size:60px;
-  position: fixed;
-  z-index: 16;
+  letter-spacing: 0.3em;
+  font-size: 1rem;
+  margin-top: 3rem;
+  border-bottom: 1px solid transparent;
 
+  transition-duration: 0.1s;
+  cursor: pointer;
 }
-
-.Rectangle {
+/* .MenuBox a:hover {
+  border-color: black;
   
-  width: 100px;
-  height: 100px;
+} */
+/* pseudo element */
+.MenuBox a::after {
+  /* must have when using sudo elements */
+  content: "";
+  width: 0;
+  height: 1px;
+  background: black;
+  
+  display: block;
+
+  transition-duration: 0.3s;
 }
-
-#ExPlore {
-
-  
-  
-  margin: 100px;
-  margin-left: 530px;
-  margin-top: 220px;
-  z-index: 11;
-  
-
+/* Because of the change of width from,".MenuBox a::after" to ".MenuBox a::after" { the Block generates */
+.MenuBox a:hover::after {
+  width: 97%;
 }
-
-#YourArch {
-
-  margin: 100px;
-  margin-left: 530px;
-  margin-top: 800px;
-  z-index: 15;
-  
-
-}
-
-#Fernweh {
-
-  margin: 100px;
-  margin-left: 530px;
-  margin-top: 750px;
-  z-index: 15;
-  
-
-}
-
-#BigFrame {
-  
-  z-index: 0;
-  position:absolute;
-  width: 100%;
-  height: 100%;
-  background-color: blue;
-  margin: 0 auto;
-
-  
-  
-  
-}
-
-#BigFrame2 {
-  
-  z-index: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
- 
- 
-  
-  
-}
-
-#BigFrame3 {
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  
-  
-  
-  
-}
-#FirstPic {
-  
-  z-index: 1;
-  background: url(Pictures/Mountain.jpg);
-  background-size: cover;
-  width: 850px;
-  height: 457px;
-  float: left;
-  margin: 100px;
-  margin-left: 100px;
-  
-}
-
-#SecondPic {
-
-  
-  z-index: 1;
-  background: url(Pictures/Plant.webp);
-  background-size: cover;
-  width: 850px;
-  height: 1444px;
-  float: right;
-  margin-right: 100px;
-  margin-top: 100px;
-  
-}
-
-#ThirdPic {
-
-  z-index: 15;
-  background: url(Pictures/Interior.jpg);
-  background-size: cover;
-  width: 850px;
-  height: 457px;
-  float: left;
-  margin-left: 100px;
-  margin-top: 575px;
-  
-}
-/*
-img {
-  height: 350px; 
-  width: 619x;
-  position:fixed;
-  left: 80px;
-  bottom: 300px;
-}
-#Plant {
-  max-width: 25%;  
-  height: auto;  
-  position:fixed;
-  left: 871px;
-  bottom: 30px;
-  
-}
-*/

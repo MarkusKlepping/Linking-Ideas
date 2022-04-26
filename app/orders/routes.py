@@ -21,14 +21,14 @@ def post_checkout():
       raise Exception('Please fill out all address fields.')
 
     create_order(request.form, cookies)
-    return render_template('orders/new.html', cookies=cookies)
+    return render_template('upload.html', cookies=cookies)
 
   except Exception as error_message:
     error = error_message or 'An error occurred while processing your order. Please make sure to enter valid data.'
 
     current_app.logger.info(f'Error creating an order: {error}')
 
-    return render_template('orders/new.html', 
+    return render_template('upload.html', 
       cookies=cookies,
       error=error
     )

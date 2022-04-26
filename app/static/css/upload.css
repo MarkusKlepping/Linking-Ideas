@@ -1,0 +1,20 @@
+.WebsiteHeadline h1{
+    color: black;
+    font-family: "Futura";
+    letter-spacing: 15px;
+    margin-top: 5px;
+    font-size: 3em;
+
+    font-weight: normal;
+    justify-content:center;
+    display: flex;
+}
+
+.input {
+    border-color:#FFB4B4 ;
+    background-color: none;
+    height: 20vh;
+    width: 40vh;
+    margin:1vh;
+    border-radius: 25px;
+}

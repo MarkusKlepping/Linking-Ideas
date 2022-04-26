@@ -1,0 +1,82 @@
+.WebsiteHeadline h1{
+    color: black;
+    font-family: "Futura";
+    letter-spacing: 15px;
+    margin-top: 5px;
+    font-size: 3em;
+
+    font-weight: normal;
+    justify-content:center;
+    display: flex;
+}
+.namediv {
+    
+    letter-spacing: 8;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+
+input {
+
+    padding: 10px;
+    border: none;
+    background-color: none;
+    text-align: center;
+    font-size: 20;
+    color:#FFB4B4;
+    outline: none;
+   
+}
+
+hr {
+    width: 400px;
+    align-items: center;
+    border-top: black;
+}
+
+
+
+#login_line{
+    width: 200px;
+    align-items: center;
+}
+
+.name_to_input {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.input {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    
+    
+}
+
+.Container {
+
+margin-top: 10%;
+
+}
+
+button {
+    text-align: center;
+    margin: auto;
+    display: flex;
+    display: grid;
+    background-color: white;
+    border: none;
+    color:#FFB4B4;
+    font-size: 15;
+    transition-duration: 0.4s;
+
+}
+
+button:hover {
+    background-color:#FFB4B4; ; /* Green */
+    color: white;
+    
+  }
