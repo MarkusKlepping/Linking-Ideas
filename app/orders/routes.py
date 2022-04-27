@@ -1,7 +1,7 @@
 
 from flask import Blueprint, render_template, request, current_app
 from app.cookies.models import Cookie
-from .services.create_order import create_order
+# from .services.create_order import create_order
 
 blueprint = Blueprint('orders', __name__)
 
@@ -20,7 +20,7 @@ def post_checkout():
     ]):
       raise Exception('Please fill out all address fields.')
 
-    create_order(request.form, cookies)
+    # create_order(request.form, cookies)
     return render_template('upload.html', cookies=cookies)
 
   except Exception as error_message:

@@ -16,8 +16,6 @@
     margin-bottom: 4vh;
     justify-self: center;
     
-
-
 }
 
 .WebsiteHeadline button{
@@ -69,6 +67,7 @@ button:hover {
     box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 .item1 {
+    
     grid-area: one;
     display: block;
     border: none;
@@ -89,6 +88,7 @@ button:hover {
 }
 
 .item2 {
+
     grid-area: two;
     display: block;
     border: none;
@@ -105,6 +105,7 @@ button:hover {
 }
 
 .item3 {
+
     grid-area: three;
     display: block;
     border: none;
@@ -117,11 +118,11 @@ button:hover {
     outline: none;
     text-align: center;
     
-
 }
 
 
 .item4 {
+
     grid-area: four;
     display: block;
     border: none;
@@ -149,6 +150,7 @@ input {
 }
 
 .upload-button {
+
     background-color: white;
     color:#FFB4B4;
     font-size: 40;
@@ -157,12 +159,11 @@ input {
     border:none;
     display:block;
     border-radius: 15px;
-    border-bottom-width: 0px;
-    
     
 }
 
 #Upload-line {
+
     align-items: center;
     width: 200px;
     color:black;

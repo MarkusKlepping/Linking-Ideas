@@ -10,6 +10,8 @@
     display: flex;
 }
 
+
+
 .namediv {
     
     letter-spacing: 8;
@@ -63,11 +65,10 @@ margin-top: 10%;
 
 }
 
-button {
+.button {
     text-align: center;
     margin: auto;
     display: flex;
-    display: grid;
     background-color: white;
     border: none;
     color:#FFB4B4;
@@ -76,8 +77,14 @@ button {
 
 }
 
-button:hover {
+.button:hover {
     background-color:#FFB4B4; ; 
     color: white;
     
   }
+
+.error {
+
+    text-align: center;
+
+}

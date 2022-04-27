@@ -4,7 +4,7 @@ from app.cookies.models import Cookie
 
 
 
-def create_order(form_data, cookies):
+def create_user(form_data, cookies):
       # Create a user
   order = Order()
   order.save()
