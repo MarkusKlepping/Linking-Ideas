@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, send_file, requ
 from .models import Cookie
 
 
+
 blueprint = Blueprint("simple_pages",__name__)
 
 
@@ -23,8 +24,8 @@ def cookie(slug):
   return render_template('cookies/show.html', cookie=cookie)
 
 
-@blueprint.route('/cookies')
-def cookies():
+@blueprint.route('/login')
+def login():
   page_number = request.args.get('page', 1, type=int)
   print('=> Page number:', page_number)
   cookies_pagination = Cookie.query.paginate(page_number, current_app.config['COOKIES_PER_PAGE'])
@@ -36,7 +37,7 @@ def index():
 
 @blueprint.route("/about")
 def about():
-    return ("I like cookies")
+    return render_template("aboutme.html")
 
 
 @blueprint.route("/about-me")

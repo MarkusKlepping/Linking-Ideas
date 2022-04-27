@@ -8,35 +8,66 @@
     letter-spacing: 15px;
     margin-top: 5px;
     font-size: 3em;
-
     font-weight: normal;
-    justify-content:center;
-    display: flex;
+    /* display: flex; */
+    width: fit-content;
+    text-align:center;
+    margin: auto;
+    margin-bottom: 4vh;
+    justify-self: center;
+    
 
 
 }
 
+.WebsiteHeadline button{
 
+    justify-self: flex-end;
+    margin-top: 3vh;
+    margin-left: 3vw;
+    height: 5vh;
+    width: 8vh;
+    float: left;
+    background-color: white;
+    color: #FFB4B4;
+    border-style: solid;
+    border-color: white;
+    border-bottom-color:#FFB4B4;
+    transition: box-shadow;
+    transition-duration: 0.4s;
+    
+    
 
+}
+
+button:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
 .grid-container {
 
     display: grid;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
     height: 100%;
     grid-template-columns: 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr ;
     gap: 10px;
     outline: none;
     grid-auto-columns: minmax(100px, auto);
+    transition: box-shadow;
     grid-template-areas: 
     "one two "
     "one three"
     "four three"
     "four three";
-}
+    
 
+}
+.grid-container input:hover {
+    transition-duration: 0.4s;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
 .item1 {
     grid-area: one;
     display: block;
@@ -49,7 +80,10 @@
     border-radius: 25px;
     outline: none;
     text-align: center;
-    
+    align-items: center;
+    justify-content: center;
+    content: 'Select some files';
+
     
 
 }
@@ -113,3 +147,26 @@ input {
     outline: none;
    
 }
+
+.upload-button {
+    background-color: white;
+    color:#FFB4B4;
+    font-size: 40;
+    transition-duration: 0.4s;
+    margin: auto;
+    border:none;
+    display:block;
+    border-radius: 15px;
+    border-bottom-width: 0px;
+    
+    
+}
+
+#Upload-line {
+    align-items: center;
+    width: 200px;
+    color:black;
+    transition-duration: 0.4s;
+    
+}
+

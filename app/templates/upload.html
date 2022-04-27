@@ -10,27 +10,41 @@
 {% block body %}
 <div class="WebsiteHeadline">
 
+  <button class="menu" onclick="history.back()" >
+    Go back
+  </button>
     <h1>Add an Idea</h1>
 
 </div>
 
+
+
 <div class = "grid-container">
 
   <!-- -------------------------------------------------------------------------- -->
-    <input type="file" name="" class="item1" placeholder="Add Pictures">
+    <input type="file" name="Pictures" class="item1" placeholder="Add Pictures" >
 
   <!-- -------------------------------------------------------------------------- -->
 
-  <input type="text" name="" class="item2" placeholder="Describe your Idea">
+  <input type="text" name="Idea_Describtion" class="item2" placeholder="Describe your Idea">
 
   <!-- -------------------------------------------------------------------------- -->
 
-  <input type="text" name="" class="item3" placeholder="Introduce your Team">
+  <input type="text" name="Team_Introduction" class="item3" placeholder="Introduce your Team">
 
   <!-- -------------------------------------------------------------------------- -->
 
-  <input type="text" name="" class="item4" placeholder="Add your Contact-Data">
+  <input type="text" name="Contact_Data" class="item4" placeholder="Add your Contact-Data">
+
+
 
 </div>
+
+<div> 
+  <button class ="upload-button" type="button">Load up!</button> 
+  <hr id="Upload-line">
+</div>
+
+
 
     {% endblock %}

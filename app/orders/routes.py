@@ -5,7 +5,7 @@ from .services.create_order import create_order
 
 blueprint = Blueprint('orders', __name__)
 
-@blueprint.route('/checkout', methods = [ 'GET', "POST" ])
+@blueprint.route('/upload', methods = [ 'GET', "POST" ])
 def post_checkout():
   try:
     cookies = Cookie.query.all()

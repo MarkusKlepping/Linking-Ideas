@@ -2,8 +2,10 @@ from app.orders.models import Order, Address, CookieOrder
 from flask import render_template
 from app.cookies.models import Cookie
 
+
+
 def create_order(form_data, cookies):
-      # Create an order
+      # Create a user
   order = Order()
   order.save()
 
