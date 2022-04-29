@@ -45,12 +45,23 @@ button:hover {
 .Container {
     
     height: 80vh;
-    background: #CCCCCC;
+    border:solid;
     display: flex;
     justify-content: center;
     margin-left: 30vw;
     margin-right: 30vw;
+    border-radius: 15px;
+    border-color: #FFB4B4;
+    transition: box-shadow;
+    transition-duration: 0.4s;
+    text-align: center;
+    position: relative;
 
+
+}
+
+.Container:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 
 .Picture {
@@ -59,8 +70,41 @@ button:hover {
     background-color: #FFFF00;
     width: 20vw;
     height:35vh;
+    box-shadow: 0 0 11px rgba(33,33,33,.2)
+
+
+}
+
+p{
+
+    text-align: center;
+    block-size: fit-content;
+    margin-top: 45vh;
+    position: absolute;
+    
+}
+
+.contact_container {
+
+    margin-top: 60vh;
+    position: absolute;
+    /* height: 50px; */
+    width: 60%;
+    justify-content: space-around;
+    display: flex;
     
 
+}
+
+.contact {
+    
+
+    width: 50px;
+    height: 50px;
+    box-sizing: content-box;
+    
+    
+    
 }
 
 

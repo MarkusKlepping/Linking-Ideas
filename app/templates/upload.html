@@ -22,29 +22,34 @@
 <div class = "grid-container">
 
   <!-- -------------------------------------------------------------------------- -->
-    <input type="file" name="Pictures" class="item1" placeholder="Add Pictures" >
+
+    <input type="text" name="title" class="item1" placeholder="Add a Title">
 
   <!-- -------------------------------------------------------------------------- -->
 
-  <input type="text" name="Idea_Describtion" class="item2" placeholder="Describe your Idea">
+    <input type="text" name="idea" class="item2" placeholder="Describe your Idea">
 
   <!-- -------------------------------------------------------------------------- -->
 
-  <input type="text" name="Team_Introduction" class="item3" placeholder="Introduce your Team">
+    <input type="text" name="team" class="item3" placeholder="Introduce your Team">
 
   <!-- -------------------------------------------------------------------------- -->
 
-  <input type="text" name="Contact_Data" class="item4" placeholder="Add your Contact-Data">
+    <input type="text" name="contact" class="item4" placeholder="Add your Contact-Data">
 
 
 
 </div>
 
 <div> 
-  <button class ="upload-button" type="button">Load up!</button> 
-  <hr id="Upload-line">
+
+  <div>
+      <input type="submit" class="upload_button" value="Load Up!" name="load_up"></input> 
+      <hr id="Upload-line">
+  </div>
+
 </div>
 
 
 
-    {% endblock %}
+{% endblock %}

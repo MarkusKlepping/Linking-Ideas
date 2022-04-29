@@ -1,6 +1,8 @@
+from distutils.command.upload import upload
 from flask import Blueprint, render_template, redirect, url_for, send_file, request, current_app
-from app.users.models import User
+from app.users.models import Upload, User
 from app.users.services.create_user import create_user
+from app.users.services.create_upload import create_upload
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import check_password_hash
 
@@ -71,3 +73,23 @@ def get_logout():
 def delete_user():
     current_user.delete()
     return redirect(url_for("users.get_login"))
+
+
+
+@blueprint.post('/upload')
+def post_upload():
+
+    try:
+        if Upload.query.filter_by(title=request.form.get('title')).first():
+            raise Exception ('This title is already taken.')
+
+        upload = create_upload(request.form)
+        login_user(user)
+
+        print ("Upload successfully")
+        return redirect(url_for('simple_pages.upload'))
+
+    except Exception as error_message:
+        error = error_message or 'An error occurred while creating an upload. Please make sure to enter valid data.'
+    
+        return render_template("upload.html", error=error)
