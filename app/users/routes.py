@@ -55,7 +55,7 @@ def post_login():
         # Logic
         login_user(user)
         # View
-        return redirect(url_for("simple_pages.main"))
+        return render_template("main_logged_in.html")
     except Exception as error_message:
         error = error_message or "An error occurred while logging in. Please verify your email and password."
         return render_template("login.html", error=error)

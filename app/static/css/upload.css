@@ -81,7 +81,7 @@ button:hover {
     text-align: center;
     align-items: center;
     justify-content: center;
-    content: 'Select some files';
+    
 
     
 
@@ -149,7 +149,7 @@ input {
    
 }
 
-.upload-button {
+.upload_button {
 
     background-color: white;
     color:#FFB4B4;
@@ -159,7 +159,15 @@ input {
     border:none;
     display:block;
     border-radius: 15px;
-    
+    transition: box-shadow;
+    transition-duration: 0.4s;
+}
+
+.upload_button:hover{
+
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+
+
 }
 
 #Upload-line {
@@ -171,3 +179,37 @@ input {
     
 }
 
+@media  screen and (max-width: 1023px) {
+
+    .grid-container {
+        
+        
+        grid-template-areas: 
+        "one "
+        "two"
+        "three"
+        "four";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 80%
+        
+    }
+
+   .grid-container input{
+       height: 30vh;
+       margin: auto;
+       width: 80%;
+   }
+
+   .upload_button {
+
+        font-size: 25;
+   }
+
+   .WebsiteHeadline {
+       font-size: 10;
+       display: flex;
+   }
+    
+}
