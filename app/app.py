@@ -1,5 +1,5 @@
 from flask import Flask
-from . import cookies, orders, users
+from . import simple_pages, orders, users
 from app.extensions.database import db, migrate
 from app.extensions.authentication import login_manager
 
@@ -16,8 +16,8 @@ def create_app():
     return app
 
 def register_blueprints(app: Flask):
-    app.register_blueprint(cookies.routes.blueprint)
-    app.register_blueprint(orders.routes.blueprint)
+    app.register_blueprint(simple_pages.routes.blueprint)
+    # app.register_blueprint(orders.routes.blueprint)
     app.register_blueprint(users.routes.blueprint)
 #app.register_blueprint(simple_pages.routes.blueprint)
 

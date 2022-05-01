@@ -16,6 +16,7 @@
 
 {% block body %}
 
+
 <script>
     function toggleMenu() {
 
@@ -28,12 +29,23 @@
         
     <div style="display: flex; align-items: center; justify-content: center; height: 5rem; width: 100%">
             <span style="background: white; position: relative; z-index: 99">Menu</span>
-        </div>
+    </div>
 
-        <a>Projects</a>
-        <a href="{{url_for('users.get_login')}}" style="color:black; text-decoration: none;">Log In</a>
-        <a>About Us</a>
-        <a href="{{url_for('users.get_signup')}}" style="color:black; text-decoration: none;">Sign Up</a>
+        {% if current_user.is_authenticated %}
+            <a> Hello {{current_user.username}}</a>
+            <p></p>
+            <a>Projects</a>
+            <a href="{{url_for('users.get_logout')}}" style="color:black; text-decoration: none;">Log Out</a>
+            <a href="{{url_for('simple_pages.about')}}" style="color:black; text-decoration: none;">About Me</a>
+            <a>Your Profile</a>
+        {% endif %}
+
+        {% if not current_user.is_authenticated %}
+            <a>Projects</a>
+            <a href="{{url_for('users.get_login')}}" style="color:black; text-decoration: none;">Log In</a>
+            <a href="{{url_for('simple_pages.about')}}" style="color:black; text-decoration: none;">About Me</a>
+            <a href="{{url_for('users.get_signup')}}" style="color:black; text-decoration: none;">Sign Up</a>
+        {% endif %}
         
         
 
@@ -54,9 +66,15 @@
 
 
 
-
-
-    
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p class = "error">
+                {{message}}
+            </p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
 
 <div class="row">
@@ -100,6 +118,10 @@
     </div>
 </div>
 
+
+
   <!-- <a href="/legal">Download legal details</a> -->
+
+
 
 {%endblock%}

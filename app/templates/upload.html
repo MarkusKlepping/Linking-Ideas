@@ -8,48 +8,56 @@
 {% endblock %}
 
 {% block body %}
-<div class="WebsiteHeadline">
-
-  <button class="menu" onclick="history.back()" >
-    Go back
-  </button>
-    <h1>Add an Idea</h1>
-
-</div>
 
 
+  <div class="WebsiteHeadline">
 
-<div class = "grid-container">
+    <button class="menu" onclick="history.back()" >
+      Go back
+    </button>
+      <h1>Add an Idea</h1>
 
-  <!-- -------------------------------------------------------------------------- -->
-
-    <input type="text" name="idea" class="item1" placeholder="Describe your Idea">
-
-  <!-- -------------------------------------------------------------------------- -->
-
-    <input type="text" name="title" class="item2" placeholder="Add a Title">
-
-  <!-- -------------------------------------------------------------------------- -->
-
-    <input type="text" name="team" class="item3" placeholder="Introduce your Team">
-
-  <!-- -------------------------------------------------------------------------- -->
-
-    <input type="text" name="contact" class="item4" placeholder="Add your Contact-Data">
-
-
-
-</div>
-
-<div> 
-
-  <div>
-      <input type="submit" class="upload_button" value="Load Up!" name="load_up"></input> 
-      <hr id="Upload-line">
   </div>
 
-</div>
+<form class = "Container" method ="POST"> 
+
+  <div class = "grid-container">
+
+    <!-- -------------------------------------------------------------------------- -->
+
+      <input type="text" name="idea" class="item1" placeholder="Describe your Idea">
+
+    <!-- -------------------------------------------------------------------------- -->
+
+      <input type="text" name="title" class="item2" placeholder="Add a Title">
+
+    <!-- -------------------------------------------------------------------------- -->
+
+      <input type="text" name="team" class="item3" placeholder="Introduce your Team">
+
+    <!-- -------------------------------------------------------------------------- -->
+
+      <input type="text" name="contact" class="item4" placeholder="Add your Contact-Data">
 
 
+
+  </div>
+
+  <div> 
+
+    <div>
+        <input type="submit" class="upload_button" value="Load Up!" name="load_up"></input> 
+        <hr id="Upload-line">
+    </div>
+
+  </div>
+
+</form>
+
+
+
+<p>
+  {{error}}
+</p>
 
 {% endblock %}

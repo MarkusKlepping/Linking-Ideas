@@ -1,6 +1,6 @@
 from http import cookies
 from app.extensions.database import db
-from app.cookies.models import Cookie
+from app.simple_pages.models import Cookie
 
 def test_cookie_update(client):
   # updates cookie's properties

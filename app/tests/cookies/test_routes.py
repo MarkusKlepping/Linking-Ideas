@@ -1,4 +1,4 @@
-from app.cookies.models import Cookie
+from app.simple_pages.models import Cookie
 
 def test_cookies_renders_cookies(client):
     #loads and renders page

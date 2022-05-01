@@ -125,118 +125,11 @@ p{
     
 }
 
-/* ------------------------------------------------ BREAK POINT: MOBILE DEVICE ------------------------------------------------*/
 
-@media screen and (max-width: 400px){
-
-    .WebsiteHeadline h1{
-        color: black;
-        font-family: "Futura";
-        letter-spacing: 15px;
-        margin-top: 5px;
-        font-size: 1.5em;
-        font-weight: normal;
-        /* display: flex; */
-        width: fit-content;
-        text-align:center;
-        margin: auto;
-        margin-bottom: 4vh;
-        justify-self: center;
-        
-    }
-    
-    .WebsiteHeadline button{
-    
-        justify-self: flex-end;
-        margin-top: 1vh;
-        margin-left: 1vw;
-        height: 4vh;
-        width: 5vh;
-        float: left;
-        background-color: white;
-        color: #FFB4B4;
-        border-style: solid;
-        border-color: white;
-        border-bottom-color:#FFB4B4;
-        transition: box-shadow;
-        transition-duration: 0.4s;
-        font-size: 7;
-    
-    }
-    
-    button:hover {
-        box-shadow: 0 0 11px rgba(33,33,33,.2); 
-    }
-    
-    .Container {
-        
-        height: 70vh;
-        border:solid;
-        display: flex;
-        justify-content: center;
-        margin-left: 10vw;
-        margin-right: 10vw;
-        border-radius: 15px;
-        border-color: #FFB4B4;
-        transition: box-shadow;
-        transition-duration: 0.4s;
-        text-align: center;
-        position: relative;
-        
-    
-    }
-    
-    .Container:hover{
-        box-shadow: 0 0 11px rgba(33,33,33,.2); 
-    }
-    
-    .Picture {
-        
-        margin-top: 5vh;
-        background-color: #FFFF00;
-        width: 40vw;
-        height: 25vh;
-        box-shadow: 0 0 11px rgba(33,33,33,.2)
-    
-    }
-    
-    p{
-    
-        text-align: center;
-        block-size: fit-content;
-        margin: 1vw;
-        margin-top: 35vh;
-        position: absolute;
-        font-family: "Futura";
-        font-size: 14;
-        
-    }
-    
-    .contact_container {
-    
-        margin-top: 55vh;
-        position: absolute;
-        /* height: 50px; */
-        width: 80%;
-        justify-content: space-around;
-        display: flex;
-        
-        
-    }
-    
-    .contact {
-        
-        width: 30px;
-        height: 30px;
-        box-sizing: content-box;
-        
-    }
-    
-}
 
 /* ------------------------------------------------ BREAK POINT: Small Screen ------------------------------------------------*/
 
-@media screen and (min-width: 400px) and (max-width:1023px){
+@media (max-width:1023px){
 
     .WebsiteHeadline h1{
         color: black;
@@ -344,3 +237,112 @@ p{
 
 }
 
+
+/* ------------------------------------------------ BREAK POINT: MOBILE DEVICE ------------------------------------------------*/
+
+@media (max-width: 400px){
+
+    .WebsiteHeadline h1{
+        color: black;
+        font-family: "Futura";
+        letter-spacing: 15px;
+        margin-top: 5px;
+        font-size: 1.5em;
+        font-weight: normal;
+        /* display: flex; */
+        width: fit-content;
+        text-align:center;
+        margin: auto;
+        margin-bottom: 4vh;
+        justify-self: center;
+        
+    }
+    
+    .WebsiteHeadline button{
+    
+        justify-self: flex-end;
+        margin-top: 1vh;
+        margin-left: 1vw;
+        height: 4vh;
+        width: 5vh;
+        float: left;
+        background-color: white;
+        color: #FFB4B4;
+        border-style: solid;
+        border-color: white;
+        border-bottom-color:#FFB4B4;
+        transition: box-shadow;
+        transition-duration: 0.4s;
+        font-size: 7;
+    
+    }
+    
+    button:hover {
+        box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    }
+    
+    .Container {
+        
+        height: 70vh;
+        border:solid;
+        display: flex;
+        justify-content: center;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        border-radius: 15px;
+        border-color: #FFB4B4;
+        transition: box-shadow;
+        transition-duration: 0.4s;
+        text-align: center;
+        position: relative;
+        
+    
+    }
+    
+    .Container:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    }
+    
+    .Picture {
+        
+        margin-top: 5vh;
+        background-color: #FFFF00;
+        width: 40vw;
+        height: 25vh;
+        box-shadow: 0 0 11px rgba(33,33,33,.2)
+    
+    }
+    
+    p{
+    
+        text-align: center;
+        block-size: fit-content;
+        margin: 1vw;
+        margin-top: 35vh;
+        position: absolute;
+        font-family: "Futura";
+        font-size: 14;
+        
+    }
+    
+    .contact_container {
+    
+        margin-top: 55vh;
+        position: absolute;
+        /* height: 50px; */
+        width: 80%;
+        justify-content: space-around;
+        display: flex;
+        
+        
+    }
+    
+    .contact {
+        
+        width: 30px;
+        height: 30px;
+        box-sizing: content-box;
+        
+    }
+    
+}

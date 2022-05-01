@@ -1,5 +1,5 @@
 from app.app import create_app
-from app.cookies.models import Cookie
+from app.simple_pages.models import Cookie
 from app.extensions.database import db
 
 app = create_app()

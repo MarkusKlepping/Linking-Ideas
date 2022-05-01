@@ -1,5 +1,5 @@
 from app.orders.models import Order, Address 
-from app.cookies.models import Cookie
+from app.simple_pages.models import Cookie
 def test_get_checkout_renders(client):
   # Page loads and renders checkout
   response = client.get('/checkout')

@@ -74,6 +74,36 @@ html, body {
   width: 100%
   
 }
+
+.error {
+
+  opacity: 0;
+
+  font-size: 50px;
+  color: red;
+  font-weight: 300;
+  text-align: center;
+  animation : fadeIn 5s;
+  position: absolute;
+  width: 100vw;
+  z-index: 5;
+  font-family: "Futura";
+  letter-spacing: 10px;
+
+  animation-iteration-count: 1;
+  
+
+}
+
+@keyframes fadeIn {
+
+  from {opacity: 1;}
+  to {opacity: 0; }
+
+}
+  
+
+
 /* ------------------------------------------------ BREAK POINT: MOBILE DEVICE ------------------------------------------------*/
 @media screen and (max-width: 400px){
   

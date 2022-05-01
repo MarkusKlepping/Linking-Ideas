@@ -55,7 +55,7 @@ def post_login():
         # Logic
         login_user(user)
         # View
-        return render_template("main_logged_in.html")
+        return render_template("main.html")
     except Exception as error_message:
         error = error_message or "An error occurred while logging in. Please verify your email and password."
         return render_template("login.html", error=error)
@@ -64,6 +64,7 @@ def post_login():
 
 
 @blueprint.get('/logout')
+
 def get_logout():
     logout_user()
     return redirect(url_for('simple_pages.main'))
@@ -78,18 +79,37 @@ def delete_user():
 
 @blueprint.post('/upload')
 def post_upload():
-
+    print("before create")
     try:
         if Upload.query.filter_by(title=request.form.get('title')).first():
             raise Exception ('This title is already taken.')
+        
+        upload = create_upload(request.form, current_user)
+        
 
-        upload = create_upload(request.form)
-        login_user(user)
-
-        print ("Upload successfully")
-        return redirect(url_for('simple_pages.upload'))
+        print ("Upload success")
+        return redirect(url_for('simple_pages.main'))
 
     except Exception as error_message:
         error = error_message or 'An error occurred while creating an upload. Please make sure to enter valid data.'
     
-        return render_template("upload.html", error=error)
+        return render_template("upload.html", error = error)
+
+@blueprint.get('/upload')
+@login_required
+def get_upload():
+
+    return render_template ("upload.html")
+
+@blueprint.get('/userinfo')
+@login_required
+def get_user_information():
+    
+    return render_template('user_information.html')
+
+
+@blueprint.post("/userinfo")
+@login_required
+def change_user():
+
+    return render_template("user_information.html")

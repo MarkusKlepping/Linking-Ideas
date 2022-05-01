@@ -1,0 +1,67 @@
+
+{% extends 'base.html' %}
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user_information.css') }}">
+
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" crossorigin="anonymous"></script>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="WebsiteHeadline">
+
+    <h1>Your Account</h1>
+
+</div>
+
+
+<form class = "Container" method ="POST"> 
+
+    <div class="namediv">
+
+            <p class = "name_to_input"></p>
+            <input type="text" name="username"  placeholder={{current_user.username}} >
+
+    </div>
+
+    <hr>
+        
+
+    <div class ="namediv">
+
+            <p class = name_to_input></p>
+            <input class ="input" type="text" name="email"  placeholder={{current_user.email}}>
+
+    </div> 
+
+    <hr>
+
+    <div class ="namediv">
+
+        <p class = name_to_input></p>
+        <input class ="input" type="password" name="password"  placeholder="Password">
+
+    </div> 
+    <hr>
+        <p></p>
+
+
+    
+    <div>
+        <input type="submit" class="button" value="Save Changes!" name="submit"></input> 
+    </div>
+
+        <p></p>
+        
+        <hr id ="login_line">
+        
+</form>
+
+
+
+
+{% endblock %}
