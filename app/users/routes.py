@@ -3,7 +3,8 @@ from flask import Blueprint, render_template, redirect, url_for, send_file, requ
 from app.users.models import Upload, User
 from app.users.services.create_user import create_user
 from app.users.services.create_upload import create_upload
-from flask_login import login_user, logout_user, current_user, login_required
+from app.users.services.change_user import change_user
+from flask_login import login_user, logout_user, current_user, login_required, user_logged_in
 from werkzeug.security import check_password_hash
 
 
@@ -56,6 +57,7 @@ def post_login():
         login_user(user)
         # View
         return render_template("main.html")
+
     except Exception as error_message:
         error = error_message or "An error occurred while logging in. Please verify your email and password."
         return render_template("login.html", error=error)
@@ -79,7 +81,6 @@ def delete_user():
 
 @blueprint.post('/upload')
 def post_upload():
-    print("before create")
     try:
         if Upload.query.filter_by(title=request.form.get('title')).first():
             raise Exception ('This title is already taken.')
@@ -110,6 +111,18 @@ def get_user_information():
 
 @blueprint.post("/userinfo")
 @login_required
-def change_user():
+def post_user_information():
 
-    return render_template("user_information.html")
+    try:
+        
+        user = User.query.filter_by(id=current_user.id).first()
+
+        change_user(request.form, user)
+        
+        return redirect(url_for('users.get_user_information'))
+
+    except Exception as error_message:
+        error = error_message or 'An error occurred while creating an upload. Please make sure to enter valid data.'
+    
+        return render_template("user_information.html")
+    

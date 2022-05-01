@@ -32,12 +32,11 @@
     </div>
 
         {% if current_user.is_authenticated %}
-            <a> Hello {{current_user.username}}</a>
-            <p></p>
-            <a>Projects</a>
+            <a href="{{url_for('users.get_user_information')}}"m style="color:black; text-decoration: none;"> Hello {{current_user.username}}</a>
+            <a>Mainpage</a>
             <a href="{{url_for('users.get_logout')}}" style="color:black; text-decoration: none;">Log Out</a>
             <a href="{{url_for('simple_pages.about')}}" style="color:black; text-decoration: none;">About Me</a>
-            <a>Your Profile</a>
+            
         {% endif %}
 
         {% if not current_user.is_authenticated %}
