@@ -13,6 +13,9 @@
 {% block body %}
 
 <div class="WebsiteHeadline">
+    <button class="back" onclick="history.back()" >
+        Go back
+    </button>
 
     <h1>Your Account</h1>
 
@@ -55,7 +58,12 @@
         <input type="submit" class="button" value="Save Changes!" name="submit"></input> 
     </div>
 
+        <hr id ="login_line">   
+
         <p></p>
+    <div id="button_holder" class = "button">
+        <a href="{{url_for('users.delete_user', id = current_user.id)}}"   id="delete_user">Delete User</a>
+    </div>
         
         <hr id ="login_line">
 

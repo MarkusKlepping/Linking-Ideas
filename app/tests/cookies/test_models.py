@@ -1,27 +1,70 @@
-from http import cookies
 from app.extensions.database import db
-from app.simple_pages.models import Cookie
+from app.users.models import Upload, User
 
-def test_cookie_update(client):
-  # updates cookie's properties
-  cookie = Cookie(slug='chocolate-chip', name='Chocolate Chip', price=1.50)
-  db.session.add(cookie)
+#test whether ideas can be uploaded
+def test_idea_upload(client):
+
+#Create an upload which can be tested
+  test_upload = Upload(
+    title = "WeWork",
+    idea ="We want to change the working world",
+    contact ="MiraMusterfrau@we.de",
+    team ="Mira Musterfrau & Max Mustermann"
+  
+  )
+  db.session.add(test_upload)
+  db.session.commit()
+  test_upload.save()
+
+  #Check whether the title of the new upload is "WeWork"
+  uploaded_title = Upload.query.filter_by(title="WeWork").first()
+  assert uploaded_title.contact == "MiraMusterfrau@we.de"
+
+#Test whether signups work
+def test_user_signup(client):
+  test_user = User(
+    username ="Mira Musterfrau",
+    email ="MiraMusterfrau@we.de",
+    password ="1234"
+  )
+  db.session.add(test_user)
+  db.session.commit()
+ 
+
+  #Check whether there is a user with the username "Mira Musterfrau"
+  uploaded_user = User.query.filter_by(email="MiraMusterfrau@we.de").first()
+  assert uploaded_user.username == "Mira Musterfrau"
+
+#Testing whether changes at the user db work
+def test_user_change(client):
+  test_user = User(
+    username ="Mira Musterfrau",
+    email ="MiraMusterfrau@we.de",
+    password ="1234"
+  )
+
+  db.session.add(test_user)
+  db.session.commit()
+#Changing the username 
+  test_user.username ="Max Mustermann"
+  test_user.save()
+
+  updated_user = User.query.filter_by(email="MiraMusterfrau@we.de").first()
+  assert updated_user.username == "Max Mustermann"
+
+#User delete Test
+def test_user_delete(client):
+
+  test_user = User(
+    username ="Mira Musterfrau",
+    email ="MiraMusterfrau@we.de",
+    password ="1234"
+  )
+
+  db.session.add(test_user)
   db.session.commit()
 
-  cookie.name = 'Peanut Butter'
-  cookie.save()
+  test_user.delete()
 
-  updated_cookie = Cookie.query.filter_by(slug='chocolate-chip').first()
-  assert updated_cookie.name == 'Peanut Butter'
-
-
-def test_cookie_delete(client):
-  # deletes cookie
-  cookie = Cookie(slug='butter', name='Butter', price=1.50)
-  db.session.add(cookie)
-  db.session.commit()
-
-  cookie.delete()
-
-  deleted_cookie = Cookie.query.filter_by(slug='butter').first()
-  assert deleted_cookie is None
+  deleted_user = User.query.filter_by(username="Mira Mustermann").first()
+  assert deleted_user is None

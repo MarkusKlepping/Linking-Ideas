@@ -44,8 +44,3 @@ def about():
 def about_me():
     return redirect(url_for("simple_pages.about"))
 
-@blueprint.route('/legal')
-def legal():
-  return send_file('static/downloads/legal.txt', as_attachment= True)
-
-

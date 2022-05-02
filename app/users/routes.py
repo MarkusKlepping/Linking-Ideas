@@ -61,7 +61,7 @@ def post_login():
 
     except Exception as error_message:
         error = error_message or "An error occurred while logging in. Please verify your email and password."
-        return render_template("main.html", error=error)
+        return render_template("login.html", error=error)
   
   
 
