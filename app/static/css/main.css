@@ -99,7 +99,37 @@ html, body {
   to {opacity: 0; }
 
 }
+
+#back_top {
+  position: absolute;
+  bottom: 10px;
+  background-color: #FFB4B4;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  z-index: 10;
+  width: 100px;
+  height:30px;
+  transition: box-shadow;
+  align-items: center;
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+#button_holder {
+  justify-content: center;
+  background-color: red;
+  position: relative
   
+}
+#back_top:hover{
+  transition-duration: 0.4s;
+  box-shadow: 0 0 11px black;
+}
 
 
 /* ------------------------------------------------ BREAK POINT: MOBILE DEVICE ------------------------------------------------*/

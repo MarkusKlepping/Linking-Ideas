@@ -25,6 +25,8 @@
 </script>
 
 
+
+
 <div class ="MenuBox" >
         
     <div style="display: flex; align-items: center; justify-content: center; height: 5rem; width: 100%">
@@ -107,7 +109,28 @@
 
 </div>
 
+<script>
 
-  <!-- <a href="/legal">Download legal details</a> -->
+    window.onscroll = function() {back_to_top()};
+    
+    function back_to_top() {
+        if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            document.getElementById("back_top").style.display = "block";
+        } else {
+            document.getElementById("back_top").style.display = "none";
+        }
+    }
+    function topFunction() {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+</script>
+
+<div id="button_holder">
+    <button onclick="topFunction()" id ="back_top">Back Up</button>
+</div>
+
+
+
 
 {%endblock%}
