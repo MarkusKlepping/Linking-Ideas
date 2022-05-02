@@ -1,5 +1,5 @@
 from flask import Flask
-from . import simple_pages, orders, users
+from . import simple_pages,  users
 from app.extensions.database import db, migrate
 from app.extensions.authentication import login_manager
 

@@ -1,9 +1,16 @@
-def change_upload(form_data, upload):
-        idea = form_data.get("idea"),
-        contact = form_data.get("contact"),
-        team = form_data.get("team"),
-        title = form_data.get("title"),
-        user_id = user.id
-    )
+def change_upload(form_data, upload):#
+
+    if form_data.get("idea"):
+        upload.idea = form_data.get("idea")
+    
+    if form_data.get("contact"):
+        upload.contact = form_data.get("contact")
+    
+    if form_data.get("team"):
+        upload.team = form_data.get("team")
+
+    if form_data.get("title"):
+        upload.title = form_data.get("title")
+
     upload.save()
-    return new_upload
+    return upload

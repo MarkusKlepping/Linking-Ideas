@@ -20,6 +20,29 @@
     
 }
 
+.back{
+    top: 10px;
+    left:20px;
+    border-radius: 15px;
+    justify-self: flex-end;
+    margin-top: 5px;
+    margin-left: 3vw;
+    height: 5vh;
+    width: 8vh;
+    background-color: white;
+    color: #FFB4B4;
+    border-style: solid;
+    border-color: white;
+    border-bottom-color:#FFB4B4;
+    transition: box-shadow;
+    transition-duration: 0.4s;
+    position: absolute;
+
+}
+
+button:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
 
 
 input {

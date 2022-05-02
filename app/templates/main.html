@@ -33,14 +33,14 @@
 
         {% if current_user.is_authenticated %}
             <a href="{{url_for('users.get_user_information')}}"m style="color:black; text-decoration: none;"> Hello {{current_user.username}}</a>
-            <a>Mainpage</a>
+            <a href="{{url_for('simple_pages.main')}}"style="color:black; text-decoration: none;">Main Page</a>
             <a href="{{url_for('users.get_logout')}}" style="color:black; text-decoration: none;">Log Out</a>
             <a href="{{url_for('simple_pages.about')}}" style="color:black; text-decoration: none;">About Me</a>
             
         {% endif %}
 
         {% if not current_user.is_authenticated %}
-            <a>Projects</a>
+            <a href="{{url_for('simple_pages.main')}}"style="color:black; text-decoration: none;">Main Page</a>
             <a href="{{url_for('users.get_login')}}" style="color:black; text-decoration: none;">Log In</a>
             <a href="{{url_for('simple_pages.about')}}" style="color:black; text-decoration: none;">About Me</a>
             <a href="{{url_for('users.get_signup')}}" style="color:black; text-decoration: none;">Sign Up</a>
@@ -76,51 +76,37 @@
 {% endwith %}
 
 
+
+
+
+
 <div class="row">
+
+    {% for column in upload_columns %}
+
     <div class="column">
 
+        {% for upload in column %}
 
-        <div style="position: relative;">
-            <img src="static/Pictures/Mountain.jpg">
+            <a href="/single_upload/{{upload.id}}" ; style="position: relative; ">
+                <!-- upload.image from routes.py  -->
+                <img src="static/Pictures/{{upload.image}}">
+                <span style="position: absolute; top: 4rem; right: 3rem;" class="idea-title">{{upload.title}}</span>
+                <span style="position: absolute; top: 10rem; right: 3rem;" class="idea-info" id="{{upload.id}}">{{upload.idea}}<br/>{{upload.team}}<br/>{{upload.contact}}</span>
 
+            </a>
 
-            <span style="position: absolute; top: 4rem; right: 3rem;">ExPlore</span>
-
-        </div>
-
-        <div style="position: relative">
-            <img src="static/Pictures/Interior.jpg">
-            <span style="position: absolute; top: 4rem; right: 3rem">Your Arch</span>
-
-        </div>
-
-        <div style="position: relative">
-            <img src="static/Pictures/Italy.jpg">
-
-            <span style="position: absolute; top: 4rem; right: 3rem">Fernweh</span>
-        </div>
-
-
+        {% endfor %}
 
     </div>
+
+    {% endfor %}
+
     
-    <div class="column">
 
-        <div style="position: relative">
-
-            <img src="static/Pictures/Plant.webp">
-            <span style="position: absolute; top: 50%; left: 29%">Plantae</span>
-
-        </div>
-
-
-    </div>
 </div>
 
 
-
   <!-- <a href="/legal">Download legal details</a> -->
-
-
 
 {%endblock%}

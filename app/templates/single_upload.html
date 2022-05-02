@@ -1,0 +1,33 @@
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/single_upload.css') }}">
+
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" crossorigin="anonymous"></script>
+
+
+
+{% endblock %}
+
+{% block body%}
+<div class="WebsiteHeadline">
+
+    <button class="back" onclick="history.back()" >
+      Go back
+    </button>
+      <h1>{{upload.title}}</h1>
+
+  </div>
+
+<div class = "grid-container">
+
+    <p type="text" name=idea class="item1" style="  overflow-wrap:break-word;">{{upload.idea}}</p>
+    
+    <p type ="text" name=title class = "item2">{{upload.title}}</p>
+    
+    <p type ="text" name =team class = "item3">{{upload.team}}</p>
+    
+    <p type ="text" name =contact class = "item4">{{upload.contact}}</p>
+
+</div>
+{%endblock%}

@@ -4,6 +4,7 @@ from app.users.models import Upload, User
 from app.users.services.create_user import create_user
 from app.users.services.create_upload import create_upload
 from app.users.services.change_user import change_user
+from app.users.services.change_upload import change_upload
 from flask_login import login_user, logout_user, current_user, login_required, user_logged_in
 from werkzeug.security import check_password_hash
 
@@ -56,11 +57,11 @@ def post_login():
         # Logic
         login_user(user)
         # View
-        return render_template("main.html")
+        return redirect(url_for("simple_pages.main"))
 
     except Exception as error_message:
         error = error_message or "An error occurred while logging in. Please verify your email and password."
-        return render_template("login.html", error=error)
+        return render_template("main.html", error=error)
   
   
 
@@ -106,7 +107,9 @@ def get_upload():
 @login_required
 def get_user_information():
     
-    return render_template('user_information.html')
+    upload = Upload.query.filter_by(user_id=current_user.id).first()
+
+    return render_template('user_information.html', upload=upload)
 
 
 @blueprint.post("/userinfo")
@@ -116,13 +119,24 @@ def post_user_information():
     try:
         
         user = User.query.filter_by(id=current_user.id).first()
+        upload = Upload.query.filter_by(user_id=user.id).first()
 
         change_user(request.form, user)
-        
+        change_upload(request.form, upload)
+
         return redirect(url_for('users.get_user_information'))
 
     except Exception as error_message:
         error = error_message or 'An error occurred while creating an upload. Please make sure to enter valid data.'
     
         return render_template("user_information.html")
-    
+
+@blueprint.get("/single_upload/<upload_id>")
+
+def get_single_upload(upload_id):
+
+
+    upload = Upload.query.filter_by(id = upload_id).first()
+    return render_template ("single_upload.html", upload = upload)
+
+

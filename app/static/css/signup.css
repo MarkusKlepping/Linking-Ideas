@@ -12,13 +12,14 @@
 
 
 .back{
-
+    top: 10px;
+    left:20px;
+    border-radius: 15px;
     justify-self: flex-end;
     margin-top: 5px;
     margin-left: 3vw;
     height: 5vh;
     width: 8vh;
-    float: left;
     background-color: white;
     color: #FFB4B4;
     border-style: solid;
@@ -26,6 +27,7 @@
     border-bottom-color:#FFB4B4;
     transition: box-shadow;
     transition-duration: 0.4s;
+    position: absolute;
 
 }
 

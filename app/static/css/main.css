@@ -29,7 +29,7 @@ html, body {
 .column img:hover{
   
   transition-duration: 0.4s;
-  box-shadow: 0 0 11px grey;
+  box-shadow: 0 0 11px black;
   
 }
 .column span{
@@ -47,13 +47,11 @@ html, body {
   display: flex;
   width: 40%;
   flex-direction: column;
-  justify-content:space-between;
+  gap: 1vh;
   margin-top: 1rem;
   transition: box-shadow;
   margin: none;
   
-
-
 }
 
 .row {
@@ -413,5 +411,124 @@ html, body {
     position: absolute;
     
   }
+}
+
+
+
+
+.idea-info {
+  display: none;
+
+  background: red;
+}
+
+.idea-info--expanded {
+
+  display: block;
+
+
+}
+
+.grid-container > * {
+
+  width: 100%!important;
+  height: 100%;
+}
+.grid-container {
+  
+  margin-top: 20vh;
+  display: grid;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 5%;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr ;
+  row-gap: 10px;
+  column-gap: 10px;
+  outline: none;
+  grid-auto-rows: minmax(100px, auto);
+  transition: box-shadow;
+  justify-items: center;
+  grid-template-areas: 
+  "one two"
+  "one three"
+  "four three"
+  "four three";
+  
+
+}
+.item1 {
+  
+  grid-area: one;
+  display: block;
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: #FFB4B4;
+  border-width: 5px;
+  border-radius: 25px;
+  outline: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 20vh
+  
+  
+
+}
+
+.item2 {
+
+  grid-area: two;
+  display: block;
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: #FFB4B4;
+  border-width: 5px;
+  border-radius: 25px;
+  outline: none;
+  text-align:center;
+  
+  
+  
+
+}
+
+.item3 {
+
+  grid-area: three;
+  display: block;
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: #FFB4B4;
+  border-width: 5px;
+  border-radius: 25px;
+  outline: none;
+  text-align: center;
+  
+  
+}
+
+
+.item4 {
+
+  grid-area: four;
+  display: block;
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: #FFB4B4;
+  border-width: 5px;
+  border-radius: 25px;
+  outline: none;
+  text-align: center;
+  
+
 }
 
