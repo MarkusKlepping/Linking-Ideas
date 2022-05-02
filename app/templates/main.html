@@ -34,6 +34,7 @@
         {% if current_user.is_authenticated %}
             <a href="{{url_for('users.get_user_information')}}"m style="color:black; text-decoration: none;"> Hello {{current_user.username}}</a>
             <a href="{{url_for('simple_pages.main')}}"style="color:black; text-decoration: none;">Main Page</a>
+            <a href="{{url_for('users.get_upload')}}" style="color:black; text-decoration: none;">Load Up</a>
             <a href="{{url_for('users.get_logout')}}" style="color:black; text-decoration: none;">Log Out</a>
             <a href="{{url_for('simple_pages.about')}}" style="color:black; text-decoration: none;">About Me</a>
             
@@ -90,7 +91,7 @@
 
             <a href="/single_upload/{{upload.id}}" ; style="position: relative; ">
                 <!-- upload.image from routes.py  -->
-                <img src="static/Pictures/{{upload.image}}">
+                <img src="static/pictures/{{upload.image}}">
                 <span style="position: absolute; top: 4rem; right: 3rem;" class="idea-title">{{upload.title}}</span>
                 <span style="position: absolute; top: 10rem; right: 3rem;" class="idea-info" id="{{upload.id}}">{{upload.idea}}<br/>{{upload.team}}<br/>{{upload.contact}}</span>
 
